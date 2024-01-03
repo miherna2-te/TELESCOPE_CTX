@@ -3,15 +3,26 @@ import sys
 from getpass import getpass
 import readline
 from execute_command import run
+from rich import print
+from rich.console import Console
+import socket
+from urllib.request import urlopen, URLError
+from rich.panel import Panel
 
+console = Console()
 
 def is_valid_email(email):
     return bool(re.match(r"^[\w\.-]+@[\w\.-]+\.\w+$", email))
 
-
 def is_valid_token(token):
     return len(token) == 32
 
+def check_api_access():
+    try:
+        socket.gethostbyname("api.thousandeyes.com")
+        return True
+    except socket.gaierror:
+        return False
 
 def parse_command(command_str):
     resource = re.search(r"show\s+(.*?)(?=\s+write|\s+filter|\s+format|$)", command_str)
@@ -34,18 +45,22 @@ def parse_command(command_str):
 
     return resource, format, write, filter
 
-
 def main():
+    welcome_banner = "ThousandEyes: Cortex Welcome"
+    console.print(Panel(welcome_banner, border_style="white"), style="bold white")
     username = input("Email: ")
     if not is_valid_email(username):
-        print("Invalid email, please try again.")
+        console.print("Invalid email, please try again.", style="bold red")
         sys.exit()
 
     password = getpass("Basic Authentication Token: ")
     if not is_valid_token(password):
-        print("Invalid token, please try again.")
+        console.print("Invalid token, please try again.", style="bold red")
         sys.exit()
-
+    
+    api_status = "Accessible" if check_api_access() else "Not accessible"
+    console.print(f"Welcome, {username}!", style="bold green")
+    console.print(f"ThousandEyes API status: {api_status}", style="bold green")
     resources = ["show tests", "show accounts", "show tests details"]
 
     while True:
@@ -57,7 +72,7 @@ def main():
                 continue
 
             if command_str.lower() == "ls":
-                print("\n".join(resources))
+                console.print("\n".join(resources), style="bold green")
                 continue
 
             if command_str.lower().startswith("show"):
@@ -71,23 +86,26 @@ def main():
                         call = "account-groups.json"
                     case "tests details":
                         call = "tests_details.json"
+                    case "endpoints":
+                        call = "endpoint-agents.json"
                     case _:
-                        print(
-                            "Invalid resource. Please use 'tests', 'accounts' or 'tests details'."
+                        console.print(
+                            "Invalid resource. Please use 'tests', 'accounts' or 'tests details'.",
+                            style="bold red",
                         )
                         continue
 
             elif command_str.lower() == "exit":
                 break
 
-            print(
-                f"{resource=}, {filter=}, {call=}, {format=}, {write=} {call=} {filter=}"
+            console.print(
+                f"{resource=} {call=} {format=}, {write=} {call=} {filter=}",
+                style="bold green",
             )
             output = run(username, password, call, format, filter, write, resource)
-            print(output)
+            console.print(output, style="bold green")
         except Exception as e:
-            print(f"An error occurred: {e}")
-
+            console.print(f"An error occurred: {e}", style="bold red")
 
 if __name__ == "__main__":
     main()

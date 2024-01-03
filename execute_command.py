@@ -2,7 +2,10 @@ import yaml
 import requests
 import json
 from jinja2 import Environment, FileSystemLoader
-from pprint import pprint
+from rich.console import Console
+from rich import print
+
+console = Console()
 
 
 def api_get_data(username, password, call, filter):
@@ -35,7 +38,7 @@ def api_get_data(username, password, call, filter):
 
 def to_yaml(data, write):
     output = yaml.dump(data)
-    print(output, write)
+    console.print(output, style="bold green")
 
 
 def to_human(data, resource):
@@ -43,11 +46,11 @@ def to_human(data, resource):
     env = Environment(loader=file_loader)
     template = env.get_template(f"{resource}.j2")
     output = template.render(data=data)
-    print(output)
+    console.print(output, style="bold green")
 
 
 def to_json(data):
-    pprint(data)
+    console.print(json.dumps(data, indent=4), style="bold green")
 
 
 def run(username, password, call, format, filter, write, resource):
@@ -60,7 +63,7 @@ def run(username, password, call, format, filter, write, resource):
     elif format == "json" or format is None:
         to_json(data)
     elif format == "csv":
-        print("not implemented")
+        console.print("not implemented", style="bold red")
     else:
-        print("Format is invalid")
+        console.print("Format is invalid", style="bold red")
     return ""
