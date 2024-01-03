@@ -1,0 +1,23 @@
+{% for test in data.test %}
+Test ID: {{ test.testId }}
+Test Name: {{ test.testName }}
+URL: {{ test.url }}
+Created By: {{ test.createdBy }}
+Created Date: {{ test.createdDate }}
+Interval: {{ test.interval }}
+Type: {{ test.type }}
+{% if test.alertsEnabled == 1 %}
+Alerts: Enabled
+{% else %}
+Alerts: Disabled
+{% endif %}
+{% if test.enabled == 1 %}
+Test Status: Enabled
+{% else %}
+Test Status: Disabled
+{% endif %}
+{% for link in test.apiLinks -%}
+Link: {{ link.href }}
+{% endfor %}
+---------------------------------
+{% endfor %}
