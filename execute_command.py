@@ -42,7 +42,7 @@ def to_yaml(data, write):
 
 
 def to_human(data, resource):
-    file_loader = FileSystemLoader("./templates")
+    file_loader = FileSystemLoader("./templates_human")
     env = Environment(loader=file_loader)
     template = env.get_template(f"{resource}.j2")
     output = template.render(data=data)
@@ -52,6 +52,12 @@ def to_human(data, resource):
 def to_json(data):
     console.print(json.dumps(data, indent=4), style="bold green")
 
+def to_csv(data, resource):
+    file_loader = FileSystemLoader("./templates_csv")
+    env = Environment(loader=file_loader)
+    template = env.get_template(f"{resource}.j2")
+    output = template.render(data=data)
+    console.print(output, style="bold green")
 
 def run(username, password, call, format, filter, write, resource):
     data = api_get_data(username, password, call, filter)
@@ -63,7 +69,7 @@ def run(username, password, call, format, filter, write, resource):
     elif format == "json" or format is None:
         to_json(data)
     elif format == "csv":
-        console.print("not implemented", style="bold red")
+        to_csv(data, resource)
     else:
         console.print("Format is invalid", style="bold red")
     return ""

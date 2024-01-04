@@ -39,7 +39,7 @@ def parse_command(command_str):
             "Command incorrect. After 'filter' must follow a string of numbers."
         )
 
-    resource = resource.group(1) if resource else None
+    resource = resource.group(1).strip() if resource else None
     format = format.group(1) if format else "json"
     filter = filter.group(1) if filter else None
 
