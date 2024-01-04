@@ -4,8 +4,11 @@ import json
 from jinja2 import Environment, FileSystemLoader
 from rich.console import Console
 from rich import print
+import os
 
 console = Console()
+
+os.makedirs("./output", exist_ok=True)
 
 
 def api_get_data(username, password, call, filter):
@@ -36,10 +39,10 @@ def api_get_data(username, password, call, filter):
     return response.json()
 
 
-def to_yaml(data, write):
+def to_yaml(data, resource, write):
     output = yaml.dump(data)
     if write:
-        with open("output.yaml", "w") as f:
+        with open(f"./output/{resource}.yaml", "w") as f:
             f.write(output)
     else:
         console.print(output, style="bold green")
@@ -51,16 +54,16 @@ def to_human(data, resource, write):
     template = env.get_template(f"{resource}.j2")
     output = template.render(data=data)
     if write:
-        with open("output.txt", "w") as f:
+        with open(f"./output/{resource}.txt", "w") as f:
             f.write(output)
     else:
         console.print(output, style="bold green")
 
 
-def to_json(data, write):
+def to_json(data, resource, write):
     output = json.dumps(data, indent=4)
     if write:
-        with open("output.json", "w") as f:
+        with open(f"./output/{resource}.json", "w") as f:
             f.write(output)
     else:
         console.print(output, style="bold green")
@@ -72,7 +75,7 @@ def to_csv(data, resource, write):
     template = env.get_template(f"{resource}.j2")
     output = template.render(data=data)
     if write:
-        with open("output.csv", "w") as f:
+        with open(f"./output/{resource}.csv", "w") as f:
             f.write(output)
     else:
         console.print(output, style="bold green")
@@ -86,7 +89,7 @@ def run(username, password, call, format, filter, write, resource):
     elif format == "human":
         to_human(data, resource, write)
     elif format == "json" or format is None:
-        to_json(data, write)
+        to_json(data, resource, write)
     elif format == "csv":
         to_csv(data, resource, write)
     else:
