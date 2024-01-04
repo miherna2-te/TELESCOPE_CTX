@@ -38,26 +38,45 @@ def api_get_data(username, password, call, filter):
 
 def to_yaml(data, write):
     output = yaml.dump(data)
-    console.print(output, style="bold green")
+    if write:
+        with open("output.yaml", "w") as f:
+            f.write(output)
+    else:
+        console.print(output, style="bold green")
 
 
-def to_human(data, resource):
+def to_human(data, resource, write):
     file_loader = FileSystemLoader("./templates_human")
     env = Environment(loader=file_loader)
     template = env.get_template(f"{resource}.j2")
     output = template.render(data=data)
-    console.print(output, style="bold green")
+    if write:
+        with open("output.txt", "w") as f:
+            f.write(output)
+    else:
+        console.print(output, style="bold green")
 
 
-def to_json(data):
-    console.print(json.dumps(data, indent=4), style="bold green")
+def to_json(data, write):
+    output = json.dumps(data, indent=4)
+    if write:
+        with open("output.json", "w") as f:
+            f.write(output)
+    else:
+        console.print(output, style="bold green")
 
-def to_csv(data, resource):
+
+def to_csv(data, resource, write):
     file_loader = FileSystemLoader("./templates_csv")
     env = Environment(loader=file_loader)
     template = env.get_template(f"{resource}.j2")
     output = template.render(data=data)
-    console.print(output, style="bold green")
+    if write:
+        with open("output.csv", "w") as f:
+            f.write(output)
+    else:
+        console.print(output, style="bold green")
+
 
 def run(username, password, call, format, filter, write, resource):
     data = api_get_data(username, password, call, filter)
@@ -65,11 +84,12 @@ def run(username, password, call, format, filter, write, resource):
     if format == "yaml":
         to_yaml(data, write)
     elif format == "human":
-        to_human(data, resource)
+        to_human(data, resource, write)
     elif format == "json" or format is None:
-        to_json(data)
+        to_json(data, write)
     elif format == "csv":
-        to_csv(data, resource)
+        to_csv(data, resource, write)
     else:
         console.print("Format is invalid", style="bold red")
+
     return ""

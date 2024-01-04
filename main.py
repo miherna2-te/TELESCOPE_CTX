@@ -11,11 +11,14 @@ from rich.panel import Panel
 
 console = Console()
 
+
 def is_valid_email(email):
     return bool(re.match(r"^[\w\.-]+@[\w\.-]+\.\w+$", email))
 
+
 def is_valid_token(token):
     return len(token) == 32
+
 
 def check_api_access():
     try:
@@ -23,6 +26,7 @@ def check_api_access():
         return True
     except socket.gaierror:
         return False
+
 
 def parse_command(command_str):
     resource = re.search(r"show\s+(.*?)(?=\s+write|\s+filter|\s+format|$)", command_str)
@@ -45,6 +49,7 @@ def parse_command(command_str):
 
     return resource, format, write, filter
 
+
 def main():
     welcome_banner = "ThousandEyes: Cortex Welcome"
     console.print(Panel(welcome_banner, border_style="white"), style="bold white")
@@ -57,7 +62,7 @@ def main():
     if not is_valid_token(password):
         console.print("Invalid token, please try again.", style="bold red")
         sys.exit()
-    
+
     api_status = "Accessible" if check_api_access() else "Not accessible"
     console.print(f"Welcome, {username}!", style="bold green")
     console.print(f"ThousandEyes API status: {api_status}", style="bold green")
@@ -106,6 +111,7 @@ def main():
             console.print(output, style="bold green")
         except Exception as e:
             console.print(f"An error occurred: {e}", style="bold red")
+
 
 if __name__ == "__main__":
     main()
