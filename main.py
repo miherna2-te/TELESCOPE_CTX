@@ -2,7 +2,7 @@ import re
 import sys
 from getpass import getpass
 import readline
-from execute_command import run
+from execute_command import DataProcessor
 from rich import print
 from rich.console import Console
 import socket
@@ -75,6 +75,7 @@ def main():
         "ls": None,
     }
     debug_enabled = False
+    processor = DataProcessor()
     while True:
         try:
             command_str = input("cortex# ")
@@ -98,7 +99,7 @@ def main():
                     continue
 
                 call = resources[resource]
-                output = run(username, password, call, format, filter, write, resource)
+                output = processor(username, password, call, format, filter, write, resource)
                 console.print(output, style="bold green")
 
             elif command_str.lower() == "exit":
