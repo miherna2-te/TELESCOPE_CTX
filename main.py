@@ -71,9 +71,8 @@ def main():
         "accounts": "account-groups.json",
         "tests details": "tests_details.json",
         "endpoints": "endpoint-agents.json",
-        "debug": None,
-        "ls": None,
     }
+    commands = resources.keys()
     debug_enabled = False
     processor = DataProcessor()
     while True:
@@ -85,22 +84,26 @@ def main():
                 continue
 
             if command_str.lower() == "ls":
-                console.print("\n".join(resources.keys()), style="bold green")
-                continue
+                for cmd in commands:
+                    console.print(f"show {cmd}", style="bold green")
+                    continue
 
             if command_str.lower().startswith("show"):
                 resource, format, write, filter = parse_command(command_str)
 
                 if resource not in resources:
+                    commands_str = ", ".join(commands)
                     console.print(
-                        "Invalid resource. Please use 'tests', 'accounts', 'tests details' or 'endpoints'.",
+                        f"Invalid resource. Please use: {commands_str}",
                         style="bold red",
                     )
                     continue
 
                 call = resources[resource]
-                output = processor(username, password, call, format, filter, write, resource)
-                console.print(output, style="bold green")
+                output = processor(
+                    username, password, call, format, filter, write, resource
+                )
+                # console.print(output)
 
             elif command_str.lower() == "exit":
                 break
@@ -113,8 +116,7 @@ def main():
 
             if debug_enabled:
                 console.print(
-                    f"{resource=} {call=} {format=}, {write=} {call=} {filter=}",
-                    style="bold green",
+                    f"{resource=} {call=} {format=}, {write=} {call=} {filter=}"
                 )
         except Exception as e:
             console.print(f"An error occurred: {e}", style="bold red")

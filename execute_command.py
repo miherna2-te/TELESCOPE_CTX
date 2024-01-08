@@ -34,9 +34,9 @@ class DataProcessor:
             elif status_code == 404:
                 return "Error: Not Found. The requested resource could not be found."
             else:
-                return f"An HTTP error occurred: {http_err}"
+                return f"An HTTP Error occurred: {http_err}"
         except Exception as err:
-            return f"An error occurred: {err}"
+            return f"An Error occurred: {err}"
 
         return response.json()
 
@@ -47,7 +47,7 @@ class DataProcessor:
             with open(f"./output/{resource}_{timestamp}.yaml", "w") as f:
                 f.write(output)
         else:
-            self.console.print(output, style="bold green")
+            self.console.print(output)
 
     def to_human(self, data, resource, write):
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -59,7 +59,7 @@ class DataProcessor:
             with open(f"./output/{resource}_{timestamp}.txt", "w") as f:
                 f.write(output)
         else:
-            self.console.print(output, style="bold green")
+            self.console.print(output)
 
     def to_json(self, data, resource, write):
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -68,24 +68,26 @@ class DataProcessor:
             with open(f"./output/{resource}_{timestamp}.json", "w") as f:
                 f.write(output)
         else:
-            self.console.print(output, style="bold green")
+            self.console.print(output)
 
     def to_csv(self, data, resource, write):
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         file_loader = FileSystemLoader("./templates_csv")
         env = Environment(loader=file_loader)
-        template = env.get_template(f"{resource}_{timestamp}.j2")
+        template = env.get_template(f"{resource}.j2")
         output = template.render(data=data)
         if write:
-            with open(f"./output/{resource}.csv", "w") as f:
+            with open(f"./output/{resource}_{timestamp}.csv", "w") as f:
                 f.write(output)
         else:
-            self.console.print(output, style="bold green")
+            self.console.print(output)
 
     def __call__(self, username, password, call, format, filter, write, resource):
         data = self.api_get_data(username, password, call, filter)
 
-        if format == "yaml":
+        if "Error" in data:
+            self.console.print(data, style="bold red")
+        elif format == "yaml":
             self.to_yaml(data, resource, write)
         elif format == "human":
             self.to_human(data, resource, write)
