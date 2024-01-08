@@ -66,8 +66,15 @@ def main():
     api_status = "Accessible" if check_api_access() else "Not accessible"
     console.print(f"Welcome, {username}!", style="bold green")
     console.print(f"ThousandEyes API status: {api_status}", style="bold green")
-    resources = ["show tests", "show accounts", "show tests details"]
-
+    resources = {
+        "tests": "tests.json",
+        "accounts": "account-groups.json",
+        "tests details": "tests_details.json",
+        "endpoints": "endpoint-agents.json",
+        "debug": None,
+        "ls": None,
+    }
+    debug_enabled = False
     while True:
         try:
             command_str = input("cortex# ")
@@ -77,38 +84,37 @@ def main():
                 continue
 
             if command_str.lower() == "ls":
-                console.print("\n".join(resources), style="bold green")
+                console.print("\n".join(resources.keys()), style="bold green")
                 continue
 
             if command_str.lower().startswith("show"):
                 resource, format, write, filter = parse_command(command_str)
 
-                # Set command based on resource
-                match resource:
-                    case "tests":
-                        call = "tests.json"
-                    case "accounts":
-                        call = "account-groups.json"
-                    case "tests details":
-                        call = "tests_details.json"
-                    case "endpoints":
-                        call = "endpoint-agents.json"
-                    case _:
-                        console.print(
-                            "Invalid resource. Please use 'tests', 'accounts' or 'tests details'.",
-                            style="bold red",
-                        )
-                        continue
+                if resource not in resources:
+                    console.print(
+                        "Invalid resource. Please use 'tests', 'accounts', 'tests details' or 'endpoints'.",
+                        style="bold red",
+                    )
+                    continue
+
+                call = resources[resource]
+                output = run(username, password, call, format, filter, write, resource)
+                console.print(output, style="bold green")
 
             elif command_str.lower() == "exit":
                 break
 
-            console.print(
-                f"{resource=} {call=} {format=}, {write=} {call=} {filter=}",
-                style="bold green",
-            )
-            output = run(username, password, call, format, filter, write, resource)
-            console.print(output, style="bold green")
+            if command_str.lower() == "debug enabled":
+                debug_enabled = True
+
+            if command_str.lower() == "debug disabled":
+                debug_enabled = False
+
+            if debug_enabled:
+                console.print(
+                    f"{resource=} {call=} {format=}, {write=} {call=} {filter=}",
+                    style="bold green",
+                )
         except Exception as e:
             console.print(f"An error occurred: {e}", style="bold red")
 
