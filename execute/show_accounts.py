@@ -1,7 +1,6 @@
 import yaml
 import requests
 import json
-import os
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 

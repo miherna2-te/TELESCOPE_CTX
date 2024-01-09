@@ -4,10 +4,11 @@ import readline
 import socket
 import sys
 from getpass import getpass
-from rich import print, console, panel, table
+from rich import print, console, panel
 from execute.show_run import show_run
 from execute.show_accounts import show_accounts
 from execute.show_endpoints import show_endpoints
+from execute.show_tests import show_tests
 
 console = console.Console()
 
@@ -56,6 +57,7 @@ def main():
         "run": show_run,
         "accounts": show_accounts,
         "endpoints": show_endpoints,
+        "tests": show_tests,
     }
     debug_enabled = False
     while True:
