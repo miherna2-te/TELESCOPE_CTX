@@ -45,8 +45,8 @@ def main():
         panel.Panel("ThousandEyes/Telescope Welcome", border_style="orange_red1"),
         style="orange_red1",
     )
-    username, password = input("Email: "), getpass("Basic Authentication Token: ")
-    validate_credentials(username, password)
+    username = os.environ.get('TELESCOPE_USER') or input("Email: ")
+    password = os.environ.get('TELESCOPE_PWD') or getpass("Basic Authentication Token: ")
     api_status = (
         "Accessible"
         if socket.gethostbyname("api.thousandeyes.com")
@@ -72,8 +72,12 @@ def main():
                 continue
             elif command_str == "debug enabled":
                 debug_enabled = True
+                continue
             elif command_str == "debug disabled":
                 debug_enabled = False
+                continue
+            if command == "!":
+                continue
             elif command == "ls":
                 show_files = [
                     os.path.splitext(file)[0].replace("_", " ")
@@ -86,7 +90,11 @@ def main():
                 console.print(output)
             elif command == "show" and resource in resources:
                 output = resources[resource](username, password, format, filter, write)
-                console.print(output)
+                if "Error" in output:
+                    output = output.replace("\"", "")
+                    console.print(output, style="bold red")
+                else:
+                    console.print(output)
                 if debug_enabled:
                     console.print(f"{resource=} {format=}, {filter=}  {write=}")
             elif command == "exit":

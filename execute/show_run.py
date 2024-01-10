@@ -9,7 +9,7 @@ def show_run(username, password, debug_enabled, api_status):
     table.add_column("Field", style="dim", width=20)
     table.add_column("Value")
     table.add_row("Username", username)
-    table.add_row("Password", password)
+    table.add_row("Password", "********" + password[28:])
     table.add_row("Debug", str(debug_enabled))
     table.add_row("API Status", api_status)
     console.print(table)
