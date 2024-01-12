@@ -1,17 +1,18 @@
-import sys
-import socket
-import readline
-import re
-import os
-from rich import print, console, panel
-from getpass import getpass
-from execute.show_tests import show_tests
-from execute.show_run import show_run
-from execute.show_endpoints import show_endpoints
+from execute.show_accounts import show_accounts
+from execute.show_agents import show_agents
+from execute.show_alert_suppression_windows import show_alert_suppression_windows
 from execute.show_alerts import show_alerts
 from execute.show_alerts_rules import show_alerts_rules
-from execute.show_agents import show_agents
-from execute.show_accounts import show_accounts
+from execute.show_endpoints import show_endpoints
+from execute.show_run import show_run
+from execute.show_tests import show_tests
+from getpass import getpass
+from rich import print, console, panel
+import os
+import re
+import readline
+import socket
+import sys
 
 console = console.Console()
 
@@ -55,6 +56,7 @@ def main():
 
     resources = {
         "accounts": show_accounts,
+        "alert suppression windows": show_alert_suppression_windows,
         "alerts": show_alerts,
         "alerts rules": show_alerts_rules,
         "agents": show_agents,
