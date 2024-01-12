@@ -1,6 +1,6 @@
 from .execute_commands import ShowCommand
 
-def show_endpoints(username, password, format, filter, write):
-    endpoints = ShowCommand(username, password)
-    show_endpoints = endpoints("endpoints", format, filter, write)
+def show_endpoints(token, format, filter, write):
+    endpoints = ShowCommand(token)
+    show_endpoints = endpoints("endpoint/agents", format, filter, write)
     return show_endpoints

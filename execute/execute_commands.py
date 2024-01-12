@@ -6,13 +6,12 @@ from .api_call import api_get_data  # Assuming api_get_data is defined in extern
 
 
 class ShowCommand:
-    def __init__(self, username, password):
-        self.username = username
-        self.password = password
+    def __init__(self, token):
+        self.token = token
         self.env = Environment(loader=FileSystemLoader("./templates"))
 
     def __call__(self, resource, format, filter, write):
-        data = api_get_data(self.username, self.password, resource, filter)
+        data = api_get_data(self.token, resource, filter)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         output = ""
         if format == "json":
@@ -21,13 +20,15 @@ class ShowCommand:
             if format == "yaml":
                 output = yaml.dump(data)
             else:
-                template = self.env.get_template(f"{resource}_{format}.j2")
+                resource_file = resource.replace('/', '_').replace('-', '_')
+                template = self.env.get_template(f"{resource_file}_{format}.j2")
                 output = template.render(data=data)
         else:
             return "Format is invalid"
 
         if write:
-            with open(f"./output/{resource}_{timestamp}.{format}", "w") as f:
+            resource_file = resource.replace('/', '_').replace('-', '_')
+            with open(f"./output/{resource_file}_{timestamp}.{format}", "w") as f:
                 f.write(output)
-                return ""
+                return f"File created: ./output/{resource_file}_{timestamp}.{format}"
         return output
