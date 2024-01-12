@@ -1,15 +1,17 @@
-import os
-import re
-import readline
-import socket
 import sys
-from getpass import getpass
+import socket
+import readline
+import re
+import os
 from rich import print, console, panel
-from execute.show_run import show_run
-from execute.show_accounts import show_accounts
-from execute.show_endpoints import show_endpoints
+from getpass import getpass
 from execute.show_tests import show_tests
+from execute.show_run import show_run
+from execute.show_endpoints import show_endpoints
+from execute.show_alerts import show_alerts
+from execute.show_alerts_rules import show_alerts_rules
 from execute.show_agents import show_agents
+from execute.show_accounts import show_accounts
 
 console = console.Console()
 
@@ -52,11 +54,13 @@ def main():
     console.print(f"Welcome to ThousandEyes!\nThousandEyes API status: {api_status}")
 
     resources = {
-        "run": show_run,
         "accounts": show_accounts,
-        "endpoints": show_endpoints,
-        "tests": show_tests,
+        "alerts": show_alerts,
+        "alerts rules": show_alerts_rules,
         "agents": show_agents,
+        "endpoints": show_endpoints,
+        "run": show_run,
+        "tests": show_tests,
     }
     debug_enabled = False
     while True:
