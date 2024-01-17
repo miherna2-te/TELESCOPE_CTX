@@ -2,7 +2,9 @@ import yaml
 import json
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
-from .api_call import api_get_data  # Assuming api_get_data is defined in external_module
+from .api_call import (
+    api_get_data,
+)  # Assuming api_get_data is defined in external_module
 
 
 class ShowCommand:
@@ -20,14 +22,14 @@ class ShowCommand:
             if format == "yaml":
                 output = yaml.dump(data)
             else:
-                resource_file = resource.replace('/', '_').replace('-', '_')
+                resource_file = resource.replace("/", "_").replace("-", "_")
                 template = self.env.get_template(f"{resource_file}_{format}.j2")
                 output = template.render(data=data)
         else:
             return "Format is invalid"
 
         if write:
-            resource_file = resource.replace('/', '_').replace('-', '_')
+            resource_file = resource.replace("/", "_").replace("-", "_")
             with open(f"./output/{resource_file}_{timestamp}.{format}", "w") as f:
                 f.write(output)
                 return f"File created: ./output/{resource_file}_{timestamp}.{format}"

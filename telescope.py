@@ -1,18 +1,11 @@
-from execute.show_accounts import show_accounts
-from execute.show_agents import show_agents
-from execute.show_alert_suppression_windows import show_alert_suppression_windows
-from execute.show_alerts import show_alerts
-from execute.show_alerts_rules import show_alerts_rules
-from execute.show_endpoints import show_endpoints
-from execute.show_run import show_run
-from execute.show_tests import show_tests
-from getpass import getpass
-from rich import print, console, panel
 import os
 import re
 import readline
 import socket
 import sys
+from getpass import getpass
+from rich import print, console, panel
+import importlib
 
 console = console.Console()
 
@@ -29,15 +22,15 @@ def parse_command(command_str):
     )
 
 
-def get_match(string, pattern):
-    match = re.search(pattern, string)
-    return match.group(1).strip() if match else None
-
-
 def validate_credentials(token):
-    if not re.match(r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", token):
-        console.print("Error: Invalid Bearer token, please try again.", style="bold red")
+    if not re.match(
+        r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", token
+    ):
+        console.print(
+            "Error: Invalid Bearer token, please try again.", style="bold red"
+        )
         sys.exit()
+
 
 def main():
     os.makedirs("./output", exist_ok=True)
@@ -46,7 +39,9 @@ def main():
         style="orange_red1",
     )
 
-    token = os.environ.get('TELESCOPE_BEARER') or getpass("Bearer Authentication Token: ")
+    token = os.environ.get("TELESCOPE_BEARER") or getpass(
+        "Bearer Authentication Token: "
+    )
     api_status = (
         "Accessible"
         if socket.gethostbyname("api.thousandeyes.com")
@@ -54,16 +49,13 @@ def main():
     )
     console.print(f"Welcome to ThousandEyes!\nThousandEyes API status: {api_status}")
 
-    resources = {
-        "accounts": show_accounts,
-        "alert suppression windows": show_alert_suppression_windows,
-        "alerts": show_alerts,
-        "alerts rules": show_alerts_rules,
-        "agents": show_agents,
-        "endpoints": show_endpoints,
-        "run": show_run,
-        "tests": show_tests,
-    }
+    show_commands = {}
+    for file in os.listdir("./execute"):
+        if "show" in file:
+            key = file.replace("show_", "").replace(".py", "").replace("_", " ")
+            value = f"execute.{file.replace('.py', '')}"
+            show_commands[key] = value
+
     debug_enabled = False
     while True:
         try:
@@ -81,22 +73,26 @@ def main():
             elif command_str == "debug disabled":
                 debug_enabled = False
                 continue
-            if command == "!":
+            if command == "!" or command == "#":
                 continue
-            elif command == "ls":
+            elif command == "ls" or (command == "show" and resource is None):
                 show_files = [
                     os.path.splitext(file)[0].replace("_", " ")
                     for file in os.listdir("execute")
                     if "show" in file
                 ]
-                console.print("\n".join(show_files), style="bold green")
+                print("\n".join(show_files))
             elif command == "show" and resource == "run":
-                output = show_run(token, debug_enabled, api_status)
-                console.print(output)
-            elif command == "show" and resource in resources:
-                output = resources[resource](token, format, aid, write)
+                module = importlib.import_module(show_commands[resource])
+                output = module.show_run(token, debug_enabled, api_status)
+                print(output)
+            elif command == "show" and resource in show_commands:
+                module = importlib.import_module(show_commands[resource])
+                function_name = "show_" + resource.replace(" ", "_")
+                function = getattr(module, function_name, None)
+                output = function(token, format, aid, write)
                 if "Error" in output:
-                    output = output.replace("\"", "")
+                    output = output.replace('"', "")
                     console.print(output, style="bold red")
                 else:
                     console.print(output)

@@ -1,5 +1,6 @@
 import requests
 
+
 def api_get_data(token, resource, filter):
     url = f"https://api.thousandeyes.com/v7/{resource}"
     if filter:
@@ -9,7 +10,7 @@ def api_get_data(token, resource, filter):
             url=url,
             headers={
                 "content-type": "application/json",
-                "Authorization": f"Bearer {token}"
+                "Authorization": f"Bearer {token}",
             },
         )
         response.raise_for_status()
