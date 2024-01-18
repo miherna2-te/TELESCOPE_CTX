@@ -81,7 +81,7 @@ def main():
                     for file in os.listdir("execute")
                     if "show" in file
                 ]
-                print("\n".join(show_files))
+                print("\n".join(sorted(show_files)))
             elif command == "show" and resource == "run":
                 module = importlib.import_module(show_commands[resource])
                 output = module.show_run(token, debug_enabled, api_status)
