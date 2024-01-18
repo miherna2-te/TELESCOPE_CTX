@@ -1,0 +1,232 @@
+"Test Created Date", "Test Interval", "Is Enabled", "Is Saved Event", "Has Path Trace In Session", "Test Modified Date", "Network Measurements", "Test Port", "Test Protocol", "Test Server", "Test Id", "Test AID", "Test Name", "Test Type", "Max Machines", "Test Results Hrefs", "Self Link Href"
+
+
+"2021-11-03T16:00:03Z", "300", "False", "False", "True", "2022-06-14T15:57:01Z", "True", "443", "tcp", "10.19.1.27", "77402", "None", "110321 - Avaya IPC2 - Sunrise", "agent-to-server", "25", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/77402"
+
+"2021-04-29T22:53:35Z", "120", "False", "False", "False", "2022-06-19T07:00:00Z", "True", "443", "icmp-with-tcp-connect", "app.slack.com", "50501", "None", "AD HOC - Slack Voice test free-willy", "http-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/50501"
+
+"2020-05-22T22:51:22Z", "300", "False", "False", "False", "2022-06-14T16:01:25Z", "True", "80", "icmp-with-tcp-connect", "10.52.14.174", "15832", "None", "Avaya  Sydney - ANZ", "agent-to-server", "80", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/15832"
+
+"2021-05-28T03:22:03Z", "300", "True", "False", "False", "2023-10-25T01:26:25Z", "True", "80", "icmp-with-tcp-connect", "10.193.16.195", "54613", "None", "Avaya AESCI - India", "agent-to-server", "500", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/54613"
+
+"2020-04-02T02:47:00Z", "300", "False", "False", "False", "2022-06-14T16:00:03Z", "True", "80", "icmp-with-tcp-connect", "148.173.252.110", "9940", "None", "Avaya IPC1 - India", "agent-to-server", "500", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/9940"
+
+"2021-05-17T20:40:45Z", "300", "False", "False", "False", "2022-06-14T16:00:00Z", "True", "80", "icmp-with-tcp-connect", "148.173.252.110", "52851", "None", "Avaya IPC1 - Manila", "agent-to-server", "400", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/52851"
+
+"2021-05-17T20:31:24Z", "300", "False", "False", "False", "2022-06-14T16:00:02Z", "True", "80", "icmp-with-tcp-connect", "148.173.252.110", "52848", "None", "Avaya IPC1 - PHX", "agent-to-server", "470", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/52848"
+
+"2021-05-19T23:57:39Z", "300", "False", "False", "False", "2022-06-14T15:59:50Z", "True", "80", "icmp-with-tcp-connect", "10.19.1.27", "53358", "None", "Avaya IPC2 - Argentina", "agent-to-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/53358"
+
+"2021-05-20T02:45:28Z", "300", "False", "False", "False", "2022-06-14T15:59:49Z", "True", "80", "icmp-with-tcp-connect", "10.19.1.27", "53366", "None", "Avaya IPC2 - Canada", "agent-to-server", "75", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/53366"
+
+"2020-04-02T02:47:23Z", "300", "False", "False", "False", "2022-06-14T16:02:28Z", "True", "80", "icmp-with-tcp-connect", "10.19.1.27", "9941", "None", "Avaya IPC2 - India", "agent-to-server", "75", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/9941"
+
+"2020-04-23T20:53:58Z", "300", "False", "False", "False", "2022-06-14T16:00:07Z", "True", "80", "icmp-with-tcp-connect", "10.19.1.27", "12723", "None", "Avaya IPC2 - Sunrise", "agent-to-server", "400", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/12723"
+
+"2020-04-21T18:06:53Z", "300", "False", "False", "False", "2022-06-14T16:00:10Z", "True", "80", "icmp-with-tcp-connect", "148.173.43.29", "12313", "None", "Avaya Mexico", "agent-to-server", "300", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/12313"
+
+"2020-09-01T20:15:55Z", "300", "False", "False", "False", "2022-06-14T16:04:31Z", "True", "80", "icmp-with-tcp-connect", "10.52.14.162", "22654", "None", "Avaya Singapore - Canada Agents", "agent-to-server", "5", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/22654"
+
+"2021-05-20T02:54:33Z", "300", "False", "False", "False", "2022-06-14T15:59:46Z", "True", "80", "icmp-with-tcp-connect", "10.52.14.162", "53372", "None", "Avaya Singapore - China", "agent-to-server", "50", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/53372"
+
+"2021-05-20T02:54:00Z", "300", "False", "False", "False", "2022-06-14T15:59:46Z", "True", "80", "icmp-with-tcp-connect", "10.52.14.162", "53371", "None", "Avaya Singapore - Hong Kong", "agent-to-server", "50", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/53371"
+
+"2020-04-21T18:21:47Z", "300", "False", "False", "False", "2022-06-14T16:02:26Z", "True", "80", "icmp-with-tcp-connect", "10.52.14.162", "12317", "None", "Avaya Singapore - India", "agent-to-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/12317"
+
+"2020-05-22T22:54:36Z", "300", "False", "False", "False", "2022-06-14T16:00:11Z", "True", "80", "icmp-with-tcp-connect", "10.52.14.162", "15833", "None", "Avaya Singapore - Japan", "agent-to-server", "220", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/15833"
+
+"2021-05-20T02:50:56Z", "300", "True", "False", "False", "2022-06-14T15:59:59Z", "True", "80", "icmp-with-tcp-connect", "10.52.14.162", "53369", "None", "Avaya Singapore - Malaysia", "agent-to-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/53369"
+
+"2020-04-21T18:22:44Z", "300", "True", "False", "False", "2021-05-17T20:15:02Z", "True", "80", "icmp-with-tcp-connect", "10.52.14.162", "12318", "None", "Avaya Singapore - Manila", "agent-to-server", "350", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/12318"
+
+"2021-05-20T02:52:10Z", "300", "False", "False", "False", "2022-06-14T15:59:47Z", "True", "80", "icmp-with-tcp-connect", "10.52.14.162", "53370", "None", "Avaya Singapore - Taiwan", "agent-to-server", "50", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/53370"
+
+"2021-05-20T02:49:47Z", "300", "False", "False", "False", "2022-06-14T15:59:48Z", "True", "80", "icmp-with-tcp-connect", "10.52.14.162", "53368", "None", "Avaya Singapore - Thailand", "agent-to-server", "50", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/53368"
+
+"2020-11-20T18:53:04Z", "300", "False", "False", "False", "2022-06-14T16:04:19Z", "True", "80", "icmp-with-tcp-connect", "10.17.52.12", "30322", "None", "Avaya UK Card - Amsterdam", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/30322"
+
+"2020-06-01T21:38:06Z", "300", "False", "False", "False", "2022-06-14T15:56:15Z", "True", "80", "icmp-with-tcp-connect", "10.17.52.12", "16280", "None", "Avaya UK Card - EMEA", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/16280"
+
+"2020-11-20T18:48:24Z", "300", "False", "False", "False", "2022-06-14T16:04:24Z", "True", "80", "icmp-with-tcp-connect", "10.17.52.12", "30317", "None", "Avaya UK Card - France", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/30317"
+
+"2020-11-20T18:52:27Z", "300", "False", "False", "False", "2022-06-14T16:04:19Z", "True", "80", "icmp-with-tcp-connect", "10.17.52.12", "30321", "None", "Avaya UK Card - Italy", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/30321"
+
+"2020-11-20T18:51:00Z", "300", "False", "False", "False", "2022-06-14T16:04:20Z", "True", "80", "icmp-with-tcp-connect", "10.17.52.12", "30320", "None", "Avaya UK Card - Spain", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/30320"
+
+"2020-04-21T18:08:14Z", "300", "False", "False", "False", "2022-06-14T16:00:07Z", "True", "80", "icmp-with-tcp-connect", "10.17.52.12", "12315", "None", "Avaya UK Card - UK", "agent-to-server", "190", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/12315"
+
+"2020-04-03T16:05:58Z", "300", "False", "False", "False", "2021-11-18T14:20:43Z", "True", "443", "icmp-with-tcp-connect", "creditservicingplatform.aexp.com", "10293", "None", "CCP Floor - Credit Servicing Platform - Global", "http-server", "3000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/10293"
+
+"2020-04-03T16:11:59Z", "300", "False", "False", "False", "2022-06-14T15:55:00Z", "True", "443", "icmp-with-tcp-connect", "ipc-ssp-citrix-ssl.ipc.us.aexp.com", "10296", "None", "CEN US", "http-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/10296"
+
+"2020-04-14T21:52:54Z", "300", "False", "False", "False", "2021-11-18T14:21:13Z", "True", "443", "icmp-with-tcp-connect", "creditservicingplatform.aexp.com", "11529", "None", "Credit Servicing Platform - CSPAP", "http-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/11529"
+
+"2020-04-14T21:50:23Z", "300", "False", "False", "False", "2021-11-18T14:20:55Z", "True", "443", "icmp-with-tcp-connect", "creditservicingplatform.aexp.com", "11528", "None", "Credit Servicing Platform - CSPEM", "http-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/11528"
+
+"2020-04-14T21:48:03Z", "300", "False", "False", "False", "2021-11-18T14:21:03Z", "True", "443", "icmp-with-tcp-connect", "creditservicingplatform.aexp.com", "11527", "None", "Credit Servicing Platform - CSPUS", "http-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/11527"
+
+"2020-04-03T16:04:13Z", "300", "False", "False", "False", "2022-06-14T15:56:45Z", "True", "443", "prefer-tcp", "wi-tims.gso.aexp.com", "10292", "None", "GSP - Citrix XenApp", "http-server", "8", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/10292"
+
+"2020-09-11T18:57:32Z", "60", "False", "False", "False", "2022-06-14T15:54:17Z", "True", "443", "icmp-with-tcp-connect", "serviceportalprod2.aexp.com", "23419", "None", "GSP - LTM (US) - Primary", "agent-to-server", "25", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/23419"
+
+"2020-09-15T18:24:06Z", "60", "False", "False", "False", "2022-06-14T15:54:18Z", "True", "443", "icmp-with-tcp-connect", "serviceportalprod1.aexp.com", "23599", "None", "GSP - LTM (US) - Secondary", "agent-to-server", "25", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/23599"
+
+"2020-09-15T18:24:20Z", "60", "False", "False", "False", "2022-06-14T15:54:19Z", "True", "443", "icmp-with-tcp-connect", "serviceportalgdha.aexp.com", "23600", "None", "GSP - LTM (US) - Tertiary", "agent-to-server", "25", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/23600"
+
+"2020-07-29T22:49:21Z", "300", "False", "False", "False", "2022-06-14T16:02:50Z", "True", "80", "icmp-with-tcp-connect", "148.173.242.151", "20387", "None", "Genesys IPC1 Inbound - U.S. Phoenix", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/20387"
+
+"2020-07-29T22:30:41Z", "300", "True", "False", "False", "2022-06-14T16:03:18Z", "True", "80", "icmp-with-tcp-connect", "148.173.242.151", "20379", "None", "Genesys IPC1 Inbound - U.S.Manila", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/20379"
+
+"2020-07-29T22:05:35Z", "300", "False", "False", "False", "2022-06-14T16:02:50Z", "True", "80", "icmp-with-tcp-connect", "148.173.242.151", "20371", "None", "Genesys IPC1 Inbound - U.S.Mexico", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/20371"
+
+"2020-04-27T21:44:31Z", "300", "False", "False", "False", "2022-06-14T16:02:51Z", "True", "80", "icmp-with-tcp-connect", "148.173.242.151", "13007", "None", "Genesys IPC1 Inbound - U.S.Sunrise", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/13007"
+
+"2020-04-27T21:00:12Z", "300", "False", "False", "False", "2022-06-14T16:04:13Z", "True", "80", "icmp-with-tcp-connect", "148.171.241.123", "12996", "None", "Genesys IPC2 - UK", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/12996"
+
+"2020-07-29T22:43:51Z", "300", "True", "False", "False", "2022-06-14T16:03:15Z", "True", "80", "icmp-with-tcp-connect", "148.171.240.140", "20384", "None", "Genesys IPC2 Inbound - U.S. Manila", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/20384"
+
+"2020-07-29T22:16:46Z", "300", "False", "False", "False", "2022-06-14T16:02:52Z", "True", "80", "icmp-with-tcp-connect", "148.171.240.140", "20375", "None", "Genesys IPC2 Inbound - U.S. Mexico", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/20375"
+
+"2020-07-29T23:04:29Z", "300", "False", "False", "False", "2022-06-14T16:02:54Z", "True", "80", "icmp-with-tcp-connect", "148.171.240.140", "20394", "None", "Genesys IPC2 Inbound - U.S. Phoenix", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/20394"
+
+"2020-04-27T21:50:34Z", "300", "False", "False", "False", "2022-06-14T16:02:55Z", "True", "80", "icmp-with-tcp-connect", "148.171.240.140", "13009", "None", "Genesys IPC2 Inbound - U.S. Sunrise", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/13009"
+
+"2020-04-27T21:01:52Z", "300", "False", "False", "False", "2022-06-14T16:04:48Z", "True", "80", "icmp-with-tcp-connect", "148.171.241.124", "12997", "None", "Genesys IPC2(2) - UK", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/12997"
+
+"2020-07-07T18:27:41Z", "300", "False", "False", "False", "2022-06-14T16:04:47Z", "True", "80", "icmp-with-tcp-connect", "148.173.149.208", "18942", "None", "Genesys Proxy  E2(B) – U.S.Sunrise", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/18942"
+
+"2020-07-07T19:29:16Z", "300", "False", "False", "False", "2022-06-14T16:04:46Z", "True", "80", "icmp-with-tcp-connect", "148.173.240.147", "18951", "None", "Genesys Proxy - U.S. Sunrise", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/18951"
+
+"2020-07-07T19:30:54Z", "300", "False", "False", "False", "2022-06-14T16:04:45Z", "True", "80", "icmp-with-tcp-connect", "138.171.247.83", "18953", "None", "Genesys Proxy 1 - U.S. Sunrise", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/18953"
+
+"2020-07-07T18:22:02Z", "300", "False", "False", "False", "2022-06-14T16:04:44Z", "True", "80", "icmp-with-tcp-connect", "148.171.240.21", "18940", "None", "Genesys Proxy DR E3  - UK", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/18940"
+
+"2020-07-07T18:16:39Z", "300", "False", "False", "False", "2022-06-14T16:04:43Z", "True", "80", "icmp-with-tcp-connect", "148.173.33.210", "18937", "None", "Genesys Proxy E1 - UK", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/18937"
+
+"2020-07-07T18:25:42Z", "300", "False", "False", "False", "2022-06-14T16:04:43Z", "True", "80", "icmp-with-tcp-connect", "148.173.42.88", "18941", "None", "Genesys Proxy E2(A) – U.S Sunrise", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/18941"
+
+"2020-07-07T18:19:53Z", "300", "False", "False", "False", "2022-06-14T16:04:42Z", "True", "80", "icmp-with-tcp-connect", "148.172.128.148", "18939", "None", "Genesys Proxy E3- UK", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/18939"
+
+"2020-07-07T19:31:39Z", "300", "False", "False", "False", "2022-06-14T16:04:41Z", "True", "80", "icmp-with-tcp-connect", "148.171.247.112", "18954", "None", "Genesys Proxy GSO – U.S.Sunrise", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/18954"
+
+"2020-07-07T19:29:58Z", "300", "False", "False", "False", "2022-06-14T16:04:40Z", "True", "80", "icmp-with-tcp-connect", "148.173.240.207", "18952", "None", "Genesys Proxy2 - U.S.Sunrise", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/18952"
+
+"2020-04-27T20:44:24Z", "600", "False", "False", "False", "2022-06-14T15:56:39Z", "True", "80", "icmp-with-tcp-connect", "148.172.129.44", "12991", "None", "Genesys RDC - UK", "agent-to-server", "75", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/12991"
+
+"2020-04-27T20:58:09Z", "300", "False", "False", "False", "2022-06-14T16:04:40Z", "True", "80", "icmp-with-tcp-connect", "148.172.129.45", "12995", "None", "Genesys RDC(2)-UK", "agent-to-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/12995"
+
+"2020-10-14T19:15:43Z", "300", "True", "False", "False", "2022-09-27T15:31:50Z", "True", "443", "icmp-with-tcp-connect", "helpcenter.aexp.com", "26417", "None", "Help Center", "http-server", "20", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/26417"
+
+"2020-04-14T21:20:25Z", "300", "False", "False", "False", "2021-08-24T15:51:01Z", "True", "443", "icmp-with-tcp-connect", "central1218.intra.aexp.com", "11524", "None", "India Call Center Agents", "http-server", "8", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/11524"
+
+"2022-05-25T20:01:02Z", "60", "False", "False", "True", "2023-11-09T15:27:30Z", "True", "443", "icmp", "148.172.41.41", "118379", "None", "JA - Citrix server 148.172.41.41", "agent-to-server", "25", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/118379"
+
+"2023-10-25T17:52:18Z", "600", "True", "False", "False", "2023-11-09T15:24:16Z", "True", "80", "icmp-with-tcp-connect", "10.193.16.195", "231198", "None", "JA - Ramp On Voice server test", "agent-to-server", "500", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/231198"
+
+"2023-08-31T18:41:45Z", "60", "False", "False", "True", "2023-09-06T19:34:38Z", "True", "443", "prefer-tcp", "139.71.145.140", "217835", "None", "JA-VPN - PHX - IPC1 - 139.71.145.140 Kaylie", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/217835"
+
+"2023-08-31T18:42:21Z", "60", "False", "False", "True", "2023-09-06T19:34:37Z", "True", "443", "prefer-tcp", "139.71.145.142", "217836", "None", "JA-VPN - PHX - IPC1 - 139.71.145.142 Kaylie", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/217836"
+
+"2023-08-31T18:42:49Z", "60", "False", "False", "True", "2023-09-06T19:34:37Z", "True", "443", "prefer-tcp", "139.71.145.144", "217837", "None", "JA-VPN - PHX - IPC1 - 139.71.145.144 Kaylie", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/217837"
+
+"2020-04-16T19:54:34Z", "300", "False", "False", "False", "2021-08-24T15:51:00Z", "True", "443", "icmp-with-tcp-connect", "ipc-ssp-ssl.ipc.us.aexp.com", "11792", "None", "Mexico TLS Users", "http-server", "8", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/11792"
+
+"2020-04-14T21:07:47Z", "300", "False", "False", "False", "2021-08-24T15:51:02Z", "True", "443", "icmp-with-tcp-connect", "ipc-ssp-ssl.ipc.us.aexp.com", "11523", "None", "PHX TLS Users", "http-server", "8", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/11523"
+
+"2020-04-14T20:29:32Z", "300", "False", "False", "False", "2021-08-24T15:51:12Z", "True", "443", "icmp-with-tcp-connect", "ipc-ssp-citrix-ssl.ipc.us.aexp.com", "11518", "None", "PHX Vendor Sites", "http-server", "4", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/11518"
+
+"2020-04-03T16:11:09Z", "300", "False", "False", "False", "2021-08-24T15:51:03Z", "True", "443", "icmp-with-tcp-connect", "ipc-ssp-ssl.ipc.us.aexp.com", "10295", "None", "PHX-CCP - IPC", "http-server", "8", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/10295"
+
+"2023-07-19T14:33:32Z", "3600", "False", "False", "True", "2023-11-09T15:27:06Z", "True", "443", "prefer-tcp", "amex.processunity.net", "207530", "None", "Process Unity - TLM", "http-server", "10", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/207530"
+
+"2021-03-04T22:40:25Z", "120", "True", "False", "False", "2022-06-28T14:05:33Z", "True", "443", "icmp-with-tcp-connect", "aexp.enterprise.slack.com", "41617", "None", "Slack APAC", "http-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/41617"
+
+"2021-03-04T22:27:35Z", "120", "True", "False", "False", "2021-10-26T20:42:22Z", "True", "443", "icmp-with-tcp-connect", "slack.com", "41612", "None", "Slack APAC - API Chat test", "http-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/41612"
+
+"2021-03-04T22:39:07Z", "120", "True", "False", "False", "2021-10-27T00:32:14Z", "True", "443", "icmp-with-tcp-connect", "aexp.enterprise.slack.com", "41615", "None", "Slack EMEA", "http-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/41615"
+
+"2021-03-04T22:26:20Z", "120", "True", "False", "False", "2021-10-27T00:30:57Z", "True", "443", "icmp-with-tcp-connect", "slack.com", "41611", "None", "Slack EMEA - API Chat test", "http-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/41611"
+
+"2021-03-04T22:39:35Z", "120", "True", "False", "True", "2022-11-22T16:46:01Z", "True", "443", "tcp", "aexp.enterprise.slack.com", "41616", "None", "Slack India", "http-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/41616"
+
+"2021-03-04T22:35:52Z", "120", "True", "False", "False", "2021-10-27T00:30:18Z", "True", "443", "icmp-with-tcp-connect", "slack.com", "41614", "None", "Slack India - API Chat test", "http-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/41614"
+
+"2021-03-04T22:41:01Z", "120", "True", "False", "False", "2022-08-04T18:05:41Z", "True", "443", "icmp-with-tcp-connect", "aexp.enterprise.slack.com", "41618", "None", "Slack LAC", "http-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/41618"
+
+"2021-03-04T22:25:17Z", "120", "True", "False", "False", "2021-10-27T00:30:00Z", "True", "443", "icmp-with-tcp-connect", "slack.com", "41610", "None", "Slack LAC - API Chat test", "http-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/41610"
+
+"2021-03-04T22:41:43Z", "120", "True", "False", "False", "2021-10-26T20:26:48Z", "True", "443", "icmp-with-tcp-connect", "aexp.enterprise.slack.com", "41619", "None", "Slack US", "http-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/41619"
+
+"2021-03-04T22:21:52Z", "120", "True", "False", "False", "2021-10-27T00:28:47Z", "True", "443", "icmp-with-tcp-connect", "slack.com", "41609", "None", "Slack US - API Chat test", "http-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/41609"
+
+"2021-04-14T11:07:40Z", "120", "False", "False", "False", "2021-09-01T14:02:38Z", "True", "443", "icmp-with-tcp-connect", "a.slack-edge.com", "47843", "None", "Slack Voice test a.slack-edge", "http-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/47843"
+
+"2021-04-27T21:23:07Z", "120", "False", "False", "False", "2021-09-01T14:02:35Z", "True", "443", "icmp-with-tcp-connect", "app.slack.com", "49927", "None", "Slack Voice test app.slack.com", "http-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/49927"
+
+"2021-04-22T20:21:09Z", "120", "False", "False", "False", "2021-09-01T14:02:39Z", "True", "443", "icmp-with-tcp-connect", "ca.slack-edge.com", "49275", "None", "Slack Voice test ca.slack-edge", "http-server", "25", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/49275"
+
+"2021-04-22T20:18:51Z", "120", "False", "False", "False", "2021-09-01T14:02:42Z", "True", "443", "icmp-with-tcp-connect", "emoji.slack-edge.com", "49273", "None", "Slack Voice test emoji", "http-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/49273"
+
+"2021-04-22T20:35:06Z", "120", "False", "False", "False", "2021-09-01T14:02:37Z", "True", "443", "icmp-with-tcp-connect", "app.slack.com", "49285", "None", "Slack Voice test free-willy", "http-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/49285"
+
+"2021-04-23T05:14:56Z", "120", "False", "False", "False", "2021-09-01T14:02:36Z", "True", "443", "icmp-with-tcp-connect", "slack-imgs.com", "49327", "None", "Slack Voice test imgs", "http-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/49327"
+
+"2021-04-22T19:29:23Z", "120", "False", "False", "False", "2021-09-01T14:02:40Z", "True", "443", "icmp-with-tcp-connect", "nearest-media-region.l.chime.aws", "49268", "None", "Slack Voice test nearest chime server", "http-server", "100", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/49268"
+
+"2020-04-17T19:15:39Z", "300", "False", "False", "False", "2021-08-24T15:51:04Z", "True", "443", "icmp-with-tcp-connect", "central1173.intra.aexp.com", "11935", "None", "Sunrise CCP Agents", "http-server", "8", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/11935"
+
+"2020-04-16T19:58:14Z", "300", "False", "False", "False", "2021-08-24T15:51:05Z", "True", "443", "icmp-with-tcp-connect", "ipc-ssp-citrix-ssl.ipc.us.aexp.com", "11793", "None", "U.S. HBS - Phoenix", "http-server", "8", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/11793"
+
+"2020-04-17T19:20:14Z", "300", "False", "False", "False", "2021-08-24T15:51:11Z", "True", "443", "icmp-with-tcp-connect", "ipc-ssp-citrix-ssl.ipc.us.aexp.com", "11939", "None", "U.S. HBS - Sunrise", "http-server", "8", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/11939"
+
+"2023-02-24T22:03:07Z", "600", "True", "False", "True", "2023-11-03T20:33:35Z", "True", "443", "prefer-tcp", "139.71.211.9", "175378", "None", "VPN - BLR - 139.71.211.9", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/175378"
+
+"2023-02-24T22:06:04Z", "600", "True", "False", "True", "2023-11-03T20:33:28Z", "True", "443", "prefer-tcp", "139.71.210.9", "175381", "None", "VPN - BOM - 139.71.210.9", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/175381"
+
+"2021-08-05T18:46:15Z", "600", "True", "False", "True", "2022-08-04T23:41:11Z", "True", "443", "prefer-tcp", "139.71.160.28", "64028", "None", "VPN - BTN - RDC - 139.71.160.28", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/64028"
+
+"2021-08-10T16:39:31Z", "600", "True", "False", "True", "2022-08-04T23:41:16Z", "True", "443", "prefer-tcp", "139.71.160.30", "64513", "None", "VPN - BTN - RDC - 139.71.160.30", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/64513"
+
+"2021-08-10T16:40:08Z", "600", "True", "False", "True", "2022-08-04T23:41:23Z", "True", "443", "prefer-tcp", "139.71.160.32", "64514", "None", "VPN - BTN - RDC - 139.71.160.32", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/64514"
+
+"2021-08-06T21:06:25Z", "600", "True", "False", "True", "2022-08-04T23:41:31Z", "True", "443", "prefer-tcp", "139.71.152.46", "64175", "None", "VPN - GSO - IPC2 - 139.71.152.46", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/64175"
+
+"2021-08-10T16:46:46Z", "600", "True", "False", "True", "2022-08-04T23:41:38Z", "True", "443", "prefer-tcp", "139.71.152.48", "64517", "None", "VPN - GSO - IPC2 - 139.71.152.48", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/64517"
+
+"2021-08-10T16:47:06Z", "600", "True", "False", "True", "2022-08-04T23:41:44Z", "True", "443", "prefer-tcp", "139.71.152.51", "64519", "None", "VPN - GSO - IPC2 - 139.71.152.51", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/64519"
+
+"2021-08-10T16:50:44Z", "600", "True", "False", "True", "2022-08-04T23:41:54Z", "True", "443", "prefer-tcp", "139.71.200.21", "64524", "None", "VPN - GUR - 139.71.200.21", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/64524"
+
+"2021-08-06T21:08:14Z", "600", "True", "False", "True", "2022-08-04T23:41:49Z", "True", "443", "prefer-tcp", "139.71.200.9", "64176", "None", "VPN - GUR - 139.71.200.9", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/64176"
+
+"2021-08-06T21:09:15Z", "600", "True", "False", "True", "2022-08-04T23:42:00Z", "True", "443", "prefer-tcp", "139.71.206.2", "64177", "None", "VPN - HKG - 139.71.206.2", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/64177"
+
+"2021-08-05T18:43:34Z", "600", "True", "False", "True", "2022-08-04T23:42:52Z", "True", "443", "prefer-tcp", "139.71.136.15", "64027", "None", "VPN - NYC - 139.71.136.15", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/64027"
+
+"2021-08-10T16:58:30Z", "600", "True", "False", "True", "2022-08-04T23:42:59Z", "True", "443", "prefer-tcp", "139.71.136.17", "64526", "None", "VPN - NYC - 139.71.136.17", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/64526"
+
+"2021-08-04T18:05:15Z", "600", "True", "False", "True", "2023-03-09T18:00:55Z", "True", "443", "prefer-tcp", "139.71.145.140", "63885", "None", "VPN - PHX - IPC1 - 139.71.145.140", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/63885"
+
+"2021-08-10T14:20:58Z", "600", "True", "False", "True", "2023-03-09T18:00:50Z", "True", "443", "prefer-tcp", "139.71.145.142", "64490", "None", "VPN - PHX - IPC1 - 139.71.145.142", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/64490"
+
+"2021-08-10T14:21:19Z", "600", "True", "False", "True", "2023-03-09T18:00:45Z", "True", "443", "prefer-tcp", "139.71.145.144", "64491", "None", "VPN - PHX - IPC1 - 139.71.145.144", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/64491"
+
+"2021-08-06T21:10:10Z", "600", "True", "False", "True", "2022-08-04T23:43:04Z", "True", "443", "prefer-tcp", "139.71.196.18", "64178", "None", "VPN - SIN - 139.71.196.18", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/64178"
+
+"2021-08-10T17:02:37Z", "600", "True", "False", "True", "2022-08-04T23:43:10Z", "True", "443", "prefer-tcp", "139.71.196.20", "64528", "None", "VPN - SIN - 139.71.196.20", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/64528"
+
+"2021-08-06T21:11:01Z", "600", "True", "False", "True", "2022-08-04T23:43:15Z", "True", "443", "prefer-tcp", "139.71.192.22", "64179", "None", "VPN - SYD - 139.71.192.22", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/64179"
+
+"2021-08-10T17:05:58Z", "600", "True", "False", "True", "2022-08-04T23:43:21Z", "True", "443", "prefer-tcp", "139.71.192.35", "64529", "None", "VPN - SYD - 139.71.192.35", "agent-to-server", "1000", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/agent-to-server/64529"
+
+"2022-02-04T15:27:38Z", "300", "True", "False", "False", "2022-02-08T16:49:32Z", "True", "443", "icmp-with-tcp-connect", "amex.webex.com", "91601", "None", "WebEx APAC", "http-server", "150", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/91601"
+
+"2022-02-04T15:24:44Z", "300", "True", "False", "False", "2022-02-08T16:50:01Z", "True", "443", "icmp-with-tcp-connect", "amex.webex.com", "91599", "None", "WebEx EMEA", "http-server", "150", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/91599"
+
+"2022-02-04T15:25:47Z", "300", "True", "False", "False", "2022-02-08T16:49:47Z", "True", "443", "icmp-with-tcp-connect", "amex.webex.com", "91600", "None", "WebEx India", "http-server", "150", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/91600"
+
+"2022-02-04T15:23:46Z", "300", "True", "False", "False", "2022-02-08T16:50:26Z", "True", "443", "icmp-with-tcp-connect", "amex.webex.com", "91598", "None", "WebEx LAC", "http-server", "150", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/91598"
+
+"2022-02-04T15:22:58Z", "300", "True", "False", "False", "2022-02-08T16:49:16Z", "True", "443", "icmp-with-tcp-connect", "amex.webex.com", "91597", "None", "WebEx US", "http-server", "150", "", "https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests/http-server/91597"
+"Self Link Href"
+"https://api.thousandeyes.com/v7/endpoint/tests/scheduled-tests?aid=180981"
