@@ -59,7 +59,7 @@ def main():
     debug_enabled = False
     while True:
         try:
-            command_str = input("telescope# ").lower()
+            command_str = input("telescope# ").lower().strip()
             readline.add_history(command_str)
             command_parts = command_str.split()
             command = command_parts[0] if command_parts else None
