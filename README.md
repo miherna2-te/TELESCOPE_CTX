@@ -2,13 +2,15 @@
 
 ![Telescope CLI](telescope.jpeg)
 
-This Python script is a Command Line Interface (CLI) application designed to interact with the ThousandEyes API, using a syntax similar to Cisco devices. The application gives users the ability to execute various "show" commands, similar to a network operating system command-line interface (CLI).
+This Python-based Command Line Interface (CLI) application, designed for interaction with the ThousandEyes API, emulates the syntax familiar to Cisco device users. It supports various "show" commands, much like a network operating system CLI.
 
-The CLI retrieves and formats data from the ThousandEyes API, displaying it in multiple output formats including YAML, CSV, JSON, and human-readable format. This variety of output formats enables users to easily analyze and manipulate the data according to their needs.
+Key Features:
 
-One of the key features of this CLI is that it requires the ThousandEyes API Bearer Token to be entered only once. After initial input, the application retains the token for the duration of the session, allowing for continuous interaction with the API without the need to repeatedly enter the token.
+- **Data Retrieval and Formatting:** The CLI fetches and formats data from the ThousandEyes API, offering a variety of output formats such as YAML, CSV, JSON, and human-readable text. This flexibility allows users to conveniently analyze and process the data as per their requirements.
 
-The CLI offers two primary methods for data output. The first is to print the API response data directly to the terminal window. Alternatively, the CLI can export the data to output files in the specified format, allowing for offline analysis and record-keeping.
+- **Single Input Bearer Token:** A standout feature of this CLI is its one-time requirement for the ThousandEyes API Bearer Token. After the initial input, the application retains the token for the entire session, facilitating uninterrupted interaction with the API without necessitating repeated token entries.
+
+- **Data Output Options:** The CLI provides two primary modes for data output. Users can opt to directly print the API response data to the terminal window or export the data to output files in their chosen format. This feature supports offline data analysis and record maintenance.
 
 ## Getting Started
 
@@ -17,6 +19,10 @@ To run the script, you'll need to have Python installed on your machine. Install
 ```
 pip install -r requirements.txt
 ```
+
+## Author
+
+Miguel Hernandez
 
 ## Dependencies
 
@@ -37,15 +43,23 @@ The script requires the following Python libraries:
 
 These libraries can be installed via pip using the `requirements.txt` file.
 
-## How to Use
+## Usage Instructions
 
-The script can be run from a command line terminal using the following command:
+Follow these steps to run the script:
+
+1. Open a command line terminal. 
+
+2. Navigate to the directory containing the `telescope.py` script. 
+
+For example, if the script is in a directory called `my_scripts` in your home directory, you would navigate there with the command `cd ~/my_scripts` on macOS or `cd \Users\YourUsername\my_scripts` on Windows. Please replace `YourUsername` with your actual username.
+
+3. Once inside the directory, you can run the script with the following command:
 
 ```
 python telescope.py
 ```
 
-Once the script is running, you will be prompted to enter your commands at the `telescope#` prompt. The script accepts the following commands:
+4. After launching the script, you'll be greeted with the `telescope#` prompt. Here, you can enter the following commands:
 
 - `debug enabled`: Enables debug mode.
 - `debug disabled`: Disables debug mode.
@@ -53,9 +67,7 @@ Once the script is running, you will be prompted to enter your commands at the `
 - `show`: Retrieves and displays commands from the execute directory in the specified format (YAML, CSV, JSON, or human-readable).
 - `exit`: Exits the program.
 
-## Author
-
-Miguel Hernandez
+Remember, you must navigate to the script's directory before running it, as the script uses relative paths to access other files and directories. If you attempt to run the script from a different directory, it will not work correctly.
 
 ## Usability Available Commands
 The following commands are currently available. Note that this list may expand over time:
