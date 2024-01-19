@@ -60,3 +60,49 @@ If an error occurs while the script is running, it will be printed to the consol
 ## Author
 
 Miguel Hernandez
+
+Usability
+Available Commands
+The following commands are currently available. Note that this list may expand over time:
+
+show accounts
+show agents
+show alerts
+show alerts rules
+show alerts suppression windows
+show bgp monitors
+show credentials
+show dashboards
+show endpoints
+show endpoints labels
+show endpoints tests
+show run
+show tags
+show tests
+
+To use these commands, simply type them at the telescope# prompt.
+
+By default, these commands will provide information in JSON format. However, you can specify the output format using the file argument followed by the desired format (json, yaml, human, or csv). For example, show accounts file yaml will display account information in YAML format.
+
+If you want to filter the output for a specific aid, use the aid argument followed by the aid number. For example, show accounts aid 1234 will display information for the account with aid 1234.
+
+To write the output to a file in the ./output directory (which will be created in the script's directory if it doesn't exist), use the write argument. For example, show accounts write will write account information to a file.
+
+Environment Variable
+You can also set the TELESCOPE_BEARER environment variable to your Bearer Authentication Token. This allows the script to authenticate with the ThousandEyes API without needing to enter the token every time.
+
+On macOS:
+
+If you're using the zsh shell (the default on macOS Catalina and later), add the following line to your ~/.zshrc file:
+
+export TELESCOPE_BEARER=your_token_here
+Then, apply the changes with the command source ~/.zshrc.
+
+On Windows:
+
+Use the setx command in Command Prompt:
+
+setx TELESCOPE_BEARER "your_token_here"
+Please replace your_token_here with your actual Bearer Authentication Token.
+
+Note: Remember to restart your terminal or command prompt after setting the environment variable.
