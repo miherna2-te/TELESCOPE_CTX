@@ -1,10 +1,10 @@
 import requests
 
 
-def api_get_data(token, resource, filter):
+def api_get_data(token, resource, aid):
     url = f"https://api.thousandeyes.com/v7/{resource}"
-    if filter:
-        url += f"?aid={filter}"
+    if aid:
+        url += f"?aid={aid}"
     try:
         response = requests.get(
             url=url,

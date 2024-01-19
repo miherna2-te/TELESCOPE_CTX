@@ -11,7 +11,6 @@ def show_run(token, debug_enabled, api_status):
     table.add_row("Bearer Token", "********" + token[28:])
     table.add_row("Debug", str(debug_enabled))
     table.add_row("API Status", api_status)
-    table.add_row("API Version:", "V7")
 
     console.print(table)
     return ""

@@ -2,59 +2,69 @@ import os
 import re
 import readline
 import socket
-import sys
 from getpass import getpass
 from rich import print, console, panel
 import importlib
 
 console = console.Console()
+# Constant for the execute directory
+EXECUTE_DIRECTORY = "./execute"
 
-
+# Function to parse the command string
 def parse_command(command_str):
-    resource = re.search(r"show\s+(.*?)(?=\s+write|\s+aid|\s+format|$)", command_str)
-    format = re.search(r"format\s+(yaml|csv|json|human)", command_str)
+    resource = re.search(r"show\s+(.*?)(?=\s+write|\s+aid|\s+file|$)", command_str)
+    file_format = re.search(r"file\s+(yaml|csv|json|human)", command_str)
     aid = re.search(r"aid\s+(\d+)", command_str)
     return (
         resource and resource.group(1).strip(),
-        format and format.group(1) or "json",
+        file_format and file_format.group(1) or "json",
         aid and aid.group(1) or None,
         "write" in command_str,
     )
 
 
-def validate_credentials(token):
-    if not re.match(
-        r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", token
-    ):
-        console.print(
-            "Error: Invalid Bearer token, please try again.", style="bold red"
-        )
-        sys.exit()
+# Function to show available resources
+def execute_show_resources():
+    show_files = [
+        os.path.splitext(file)[0].replace("_", " ")
+        for file in os.listdir(EXECUTE_DIRECTORY)
+        if "show" in file
+    ]
+    print("\n".join(sorted(show_files)))
 
 
+# Function to get commands from the execute directory
+def show_commands_in_directory():
+    commands = {}
+    for file in os.listdir(EXECUTE_DIRECTORY):
+        if "show" in file:
+            key = file.replace("show_", "").replace(".py", "").replace("_", " ")
+            value = f"execute.{file.replace('.py', '')}"
+            commands[key] = value
+    return commands
+
+
+# Main function
 def main():
     os.makedirs("./output", exist_ok=True)
-    console.print(
-        panel.Panel("ThousandEyes/Telescope Welcome", border_style="orange_red1"),
-        style="orange_red1",
-    )
-
-    token = os.environ.get("TELESCOPE_BEARER") or getpass(
-        "Bearer Authentication Token: "
-    )
     api_status = (
         "Accessible"
         if socket.gethostbyname("api.thousandeyes.com")
         else "Not accessible"
     )
-    console.print(f"Welcome to ThousandEyes!\nThousandEyes API status: {api_status}")
 
-    show_commands = {}
-    for file in os.listdir("./execute"):
-        if "show" in file:
-            key = file.replace("show_", "").replace(".py", "").replace("_", " ")
-            value = f"execute.{file.replace('.py', '')}"
-            show_commands[key] = value
+    console.print(
+        panel.Panel(
+            f"ThousandEyes/Telescope Welcome. API Status: {api_status}",
+            border_style="orange_red1",
+        ),
+        style="orange_red1",
+    )
+    token = os.environ.get("TELESCOPE_BEARER") or getpass(
+        "Bearer Authentication Token: "
+    )
+
+    show_commands = show_commands_in_directory()
 
     debug_enabled = False
     while True:
@@ -63,8 +73,7 @@ def main():
             readline.add_history(command_str)
             command_parts = command_str.split()
             command = command_parts[0] if command_parts else None
-            parsed_command = parse_command(command_str)
-            resource, format, aid, write = parsed_command
+            resource, file_format, aid, write = parse_command(command_str)
             if command_str == "":
                 continue
             elif command_str == "debug enabled":
@@ -73,35 +82,25 @@ def main():
             elif command_str == "debug disabled":
                 debug_enabled = False
                 continue
-            if command == "!" or command == "#":
+            elif command in ["!", "#"]:
                 continue
             elif command == "ls" or (command == "show" and resource is None):
-                show_files = [
-                    os.path.splitext(file)[0].replace("_", " ")
-                    for file in os.listdir("execute")
-                    if "show" in file
-                ]
-                print("\n".join(sorted(show_files)))
-            elif command == "show" and resource == "run":
-                module = importlib.import_module(show_commands[resource])
-                output = module.show_run(token, debug_enabled, api_status)
-                print(output)
+                execute_show_resources()
             elif command == "show" and resource in show_commands:
                 module = importlib.import_module(show_commands[resource])
                 function_name = "show_" + resource.replace(" ", "_")
                 function = getattr(module, function_name, None)
-                output = function(token, format, aid, write)
+                output = function(token, file_format, aid, write)
                 if "Error" in output:
-                    output = output.replace('"', "")
-                    console.print(output, style="bold red")
+                    console.print(output.replace('"', ""), style="bold red")
                 else:
                     console.print(output)
                 if debug_enabled:
-                    console.print(f"{resource=} {format=}, {aid=}  {write=}")
+                    console.print(f"{resource=} {file_format=}, {aid=}  {write=}")
             elif command == "exit":
                 break
             else:
-                console.print(f"Invalid command. Please try again.", style="bold red")
+                console.print("Invalid command. Please try again.", style="bold red")
         except Exception as e:
             console.print(f"An error occurred: {e}", style="bold red")
 
