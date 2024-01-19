@@ -1,12 +1,14 @@
 import os
 import re
-import readline
 import socket
 from getpass import getpass
-from rich import print, console, panel
 import importlib
+from prompt_toolkit import prompt
+from prompt_toolkit.history import FileHistory
+from rich import print, console, panel
 
 console = console.Console()
+
 # Constant for the execute directory
 EXECUTE_DIRECTORY = "./execute"
 
@@ -30,8 +32,10 @@ def execute_show_resources():
         for file in os.listdir(EXECUTE_DIRECTORY)
         if "show" in file
     ]
-    print("\n".join(sorted(show_files)))
+    return sorted(show_files)
 
+
+commands_list = execute_show_resources()
 
 # Function to get commands from the execute directory
 def show_commands_in_directory():
@@ -69,8 +73,11 @@ def main():
     debug_enabled = False
     while True:
         try:
-            command_str = input("telescope# ").lower().strip()
-            readline.add_history(command_str)
+            command_str = (
+                prompt("telescope# ", history=FileHistory("history.txt"))
+                .lower()
+                .strip()
+            )
             command_parts = command_str.split()
             command = command_parts[0] if command_parts else None
             resource, file_format, aid, write = parse_command(command_str)
@@ -85,7 +92,13 @@ def main():
             elif command in ["!", "#"]:
                 continue
             elif command == "ls" or (command == "show" and resource is None):
-                execute_show_resources()
+                print("\n".join(commands_list))
+            elif command == "show" and resource == "run":
+                module = importlib.import_module(show_commands[resource])
+                function_name = "show_" + resource.replace(" ", "_")
+                function = getattr(module, function_name, None)
+                output = function(token, debug_enabled, api_status)
+                console.print(output)
             elif command == "show" and resource in show_commands:
                 module = importlib.import_module(show_commands[resource])
                 function_name = "show_" + resource.replace(" ", "_")
