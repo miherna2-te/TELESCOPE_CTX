@@ -53,10 +53,6 @@ Once the script is running, you will be prompted to enter your commands at the `
 - `show`: Retrieves and displays commands from the execute directory in the specified format (YAML, CSV, JSON, or human-readable).
 - `exit`: Exits the program.
 
-## Error Handling
-
-If an error occurs while the script is running, it will be printed to the console with a message indicating that an error occurred.
-
 ## Author
 
 Miguel Hernandez
