@@ -79,15 +79,55 @@ The following commands are currently available. Note that this list may expand o
 - show tags
 - show tests
 
-To use these commands, simply type them at the telescope# prompt.
+To use these commands, simply type them at the `telescope#` prompt.
 
-By default, these commands will provide information in JSON format. However, you can specify the output format using the file argument followed by the desired format (json, yaml, human, or csv). For example, show accounts file yaml will display account information in YAML format.
+By default, these commands will provide information in JSON format. However, you can specify the output format using the file argument followed by the desired format (json, yaml, human, or csv). 
 
-If you want to filter the output for a specific aid, use the aid argument followed by the aid number. For example, show accounts aid 1234 will display information for the account with aid 1234.
+For example `show accounts file yaml` will display account information in YAML format.
 
-To write the output to a file in the ./output directory (which will be created in the script's directory if it doesn't exist), use the write argument. For example, show accounts write will write account information to a file.
+```
+show accounts file yaml
+"user1_te","1374216"
+"user2_te","1374221"
+"user3_te","1374226"
+"user4_te","1374231"
+"user5_te","1374236"
+"user6_te","1374241"
+"user7_te","1374246"
+"user8_te","1374251"
+"user9_te","1374256"
+"user10_te","1374261"
+"user11_te","1374266"
+"user12_te","1374271"
+"user13_te","1374276"
+"user14_te","1374281"
+"user15_te","1374286"
+"user16_te","1374296"
+"user17_te","1374301"
+"user18_te","1374306"
+"user19_te","1374311"
+"user20_te","1374316"
+"user21_te","1374321"
+"user22_te","1374326"
+"user1_pi","1374331"
+"user2_pi","1374336"
+"user3_pi","1374341"
+"user4_pi","1374346"
+"user5_pi","1374351"
+"user6_pi","1374356"
+"user7_pi","1374361"
+```
 
-Environment Variable
+If you want to filter the output for a specific aid, use the `aid` argument followed by the respective number. 
+
+```
+show endpoints aid 1374361
+```
+
+To write the output to a file in the `./output` directory (which will be created in the script's directory if it doesn't exist), use the write argument. For example, `show accounts write` will write account information to a file.
+
+
+## Environment Variable
 You can also set the TELESCOPE_BEARER environment variable to your Bearer Authentication Token. This allows the script to authenticate with the ThousandEyes API without needing to enter the token every time.
 
 On macOS:
