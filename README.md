@@ -61,8 +61,7 @@ If an error occurs while the script is running, it will be printed to the consol
 
 Miguel Hernandez
 
-Usability
-Available Commands
+## Usability Available Commands
 The following commands are currently available. Note that this list may expand over time:
 
 show accounts
