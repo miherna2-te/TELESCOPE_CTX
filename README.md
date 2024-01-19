@@ -1,8 +1,8 @@
-# ThousandEyes Telescope CLI
+# ThousandEyes Telescope CLI (CONTEXT)
 
 ![Telescope CLI](telescope.jpeg)
 
-This Python-based Command Line Interface (CLI) application, designed for interaction with the ThousandEyes API, emulates the syntax familiar to Cisco device users. It supports various "show" commands, much like a network operating system CLI.
+This Python-based Command Line Interface (CLI) application, designed for interaction with the ThousandEyes API, emulates the syntax and context familiar to Cisco device users. It supports various "show" commands, much like a network operating system CLI.
 
 Key Features:
 
