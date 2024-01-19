@@ -64,20 +64,20 @@ Miguel Hernandez
 ## Usability Available Commands
 The following commands are currently available. Note that this list may expand over time:
 
-show accounts
-show agents
-show alerts
-show alerts rules
-show alerts suppression windows
-show bgp monitors
-show credentials
-show dashboards
-show endpoints
-show endpoints labels
-show endpoints tests
-show run
-show tags
-show tests
+- show accounts
+- show agents
+- show alerts
+- show alerts rules
+- show alerts suppression windows
+- show bgp monitors
+- show credentials
+- show dashboards
+- show endpoints
+- show endpoints labels
+- show endpoints tests
+- show run
+- show tags
+- show tests
 
 To use these commands, simply type them at the telescope# prompt.
 
