@@ -83,39 +83,33 @@ To use these commands, simply type them at the `telescope#` prompt.
 
 By default, these commands will provide information in JSON format. However, you can specify the output format using the file argument followed by the desired format (json, yaml, human, or csv). 
 
-For example `show accounts file yaml` will display account information in YAML format.
+For example `show accounts file csv` will display account information in CSV format.
 
 ```bash
-show accounts file yaml
-"user1_te","1374216"
-"user2_te","1374221"
-"user3_te","1374226"
-"user4_te","1374231"
-"user5_te","1374236"
-"user6_te","1374241"
-"user7_te","1374246"
-"user8_te","1374251"
-"user9_te","1374256"
-"user10_te","1374261"
-"user11_te","1374266"
-"user12_te","1374271"
-"user13_te","1374276"
-"user14_te","1374281"
-"user15_te","1374286"
-"user16_te","1374296"
-"user17_te","1374301"
-"user18_te","1374306"
-"user19_te","1374311"
-"user20_te","1374316"
-"user21_te","1374321"
-"user22_te","1374326"
-"user1_pi","1374331"
-"user2_pi","1374336"
-"user3_pi","1374341"
-"user4_pi","1374346"
-"user5_pi","1374351"
-"user6_pi","1374356"
-"user7_pi","1374361"
+show accounts file csv
+"netops1_te","1334416"
+"netops2_te","1334421"
+"netops3_te","1334426"
+```
+
+Changing the file extension to YAML:
+
+```bash
+telescope# show accounts file yaml
+_links:
+  self:
+    href: https://api.thousandeyes.com/v7/account-groups
+accountGroups:
+- accountGroupName: netops1_te
+  aid: '1334416'
+  isCurrentAccountGroup: false
+  isDefaultAccountGroup: false
+  organizationName: Test
+- accountGroupName: netops2_te
+  aid: '1334421'
+  isCurrentAccountGroup: false
+  isDefaultAccountGroup: false
+  organizationName: Test
 ```
 
 If you want to filter the output for a specific aid, use the `aid` argument followed by the respective number. 
