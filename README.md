@@ -85,7 +85,7 @@ By default, these commands will provide information in JSON format. However, you
 
 For example `show accounts file yaml` will display account information in YAML format.
 
-```
+```bash
 show accounts file yaml
 "user1_te","1374216"
 "user2_te","1374221"
@@ -120,7 +120,7 @@ show accounts file yaml
 
 If you want to filter the output for a specific aid, use the `aid` argument followed by the respective number. 
 
-```
+```bash
 show endpoints aid 1374361
 ```
 
