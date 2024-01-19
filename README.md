@@ -148,18 +148,24 @@ This combination of arguments provides a powerful and flexible way to retrieve a
 ## Environment Variable
 You can also set the TELESCOPE_BEARER environment variable to your Bearer Authentication Token. This allows the script to authenticate with the ThousandEyes API without needing to enter the token every time.
 
-On macOS:
+### On macOS:
 
 If you're using the zsh shell (the default on macOS Catalina and later), add the following line to your ~/.zshrc file:
 
+```bash
 export TELESCOPE_BEARER=your_token_here
-Then, apply the changes with the command source ~/.zshrc.
+```
 
-On Windows:
+Then, apply the changes with the command `source ~/.zshrc`.
+
+### On Windows:
 
 Use the setx command in Command Prompt:
 
+```bash
 setx TELESCOPE_BEARER "your_token_here"
-Please replace your_token_here with your actual Bearer Authentication Token.
+```
 
-Note: Remember to restart your terminal or command prompt after setting the environment variable.
+Please replace `your_token_here` with your actual Bearer Authentication Token.
+
+**Note:** Remember to restart your terminal or command prompt after setting the environment variable.
