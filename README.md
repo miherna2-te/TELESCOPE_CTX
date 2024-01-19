@@ -63,13 +63,12 @@ python telescope.py
 
 - `debug enabled`: Enables debug mode.
 - `debug disabled`: Disables debug mode.
-- `ls`: Lists available resources.
-- `show`: Retrieves and displays commands from the execute directory in the specified format (YAML, CSV, JSON, or human-readable).
+- `ls` or `show`: Lists available commands.
 - `exit`: Exits the program.
 
-Remember, you must navigate to the script's directory before running it, as the script uses relative paths to access other files and directories. If you attempt to run the script from a different directory, it will not work correctly.
+Remember, you must navigate to the script's directory before running it, as the script uses relative paths to access other files and directories. If you attempt to run the script from a different directory, it will not work.
 
-## Usability Available Commands
+## Available Commands
 The following commands are currently available. Note that this list may expand over time:
 
 - show accounts
@@ -87,65 +86,30 @@ The following commands are currently available. Note that this list may expand o
 - show tags
 - show tests
 
-To use these commands, simply type them at the `telescope#` prompt.
+## Command Line Usage
 
-By default, these commands will provide information in JSON format. However, you can specify the output format using the file argument followed by the desired format (json, yaml, human, or csv). 
+Once the Telescope CLI script is running and you're inside the `telescope#` context, you can use the following command structure:
 
-For example `show accounts file csv` will display account information in CSV format.
-
-```bash
-show accounts file csv
-"netops1_te","1334416"
-"netops2_te","1334421"
-"netops3_te","1334426"
+```
+show [command] file [csv | yaml | human | json] aid [aid-number] write
 ```
 
-Changing the file extension to YAML:
+Here's a breakdown of the command structure:
 
-```bash
-telescope# show accounts file yaml
-_links:
-  self:
-    href: https://api.thousandeyes.com/v7/account-groups
-accountGroups:
-- accountGroupName: netops1_te
-  aid: '1334416'
-  isCurrentAccountGroup: false
-  isDefaultAccountGroup: false
-  organizationName: Test
-- accountGroupName: netops2_te
-  aid: '1334421'
-  isCurrentAccountGroup: false
-  isDefaultAccountGroup: false
-  organizationName: Test
-```
+- `show [command]`: This is the base command. Replace `[command]` with any of the available commands such as `accounts`, `agents`, `alerts`, etc.
+- `file [csv | yaml | human | json]`: This is an optional command used to specify the output format. Replace `[csv | yaml | human | json]` with your preferred format.
+- `aid [aid-number]`: This is another optional command used to filter the output for a specific `aid`. Replace `[aid-number]` with the `aid` you want to filter by.
+- `write`: This is a standalone optional command. If included, the output will be written to a file in the `./output` directory.
 
-If you want to filter the output for a specific aid, use the `aid` argument followed by the respective number. 
-
-```bash
-show endpoints aid 1374361
-```
-
-To write the output to a file in the `./output` directory (which will be created in the script's directory if it doesn't exist), use the write argument. For example, `show accounts write` will write account information to a file.
-
-## Combining Arguments
-
-The CLI also allows you to combine arguments for more specific outputs. Here's an example:
+Here's an example of how to use these commands:
 
 ```
 show endpoints file human aid 1234 write
 ```
 
-In this command:
+In this example, the `show endpoints` command retrieves endpoint data. The `file human` command specifies the output in a human-readable format. The `aid 1234` command filters the output for an endpoint with `aid` 1234. The `write` command writes this output to a file in the `./output` directory.
 
-- `show endpoints` tells the CLI to retrieve endpoint data.
-- `file human` specifies that the output format should be human-readable.
-- `aid 1234` filters the output to only include data for the endpoint with aid 1234.
-- `write` instructs the CLI to write the output to a file.
-
-The resulting output will be written to a file in the `./output` directory. The file will contain human-readable endpoint data for the endpoint with aid 1234.
-
-This combination of arguments provides a powerful and flexible way to retrieve and format data from the ThousandEyes API. You can mix and match arguments according to your needs.
+Remember, `file`, `aid`, and `write` are all optional. If you don't specify an output format, the default is JSON. If you don't specify an `aid`, the command will return data for the default `aid`. If you don't include `write`, the output will be printed to the terminal
 
 ## Environment Variable
 You can also set the TELESCOPE_BEARER environment variable to your Bearer Authentication Token. This allows the script to authenticate with the ThousandEyes API without needing to enter the token every time.
