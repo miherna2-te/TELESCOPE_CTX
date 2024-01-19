@@ -126,6 +126,24 @@ show endpoints aid 1374361
 
 To write the output to a file in the `./output` directory (which will be created in the script's directory if it doesn't exist), use the write argument. For example, `show accounts write` will write account information to a file.
 
+## Combining Arguments
+
+The CLI also allows you to combine arguments for more specific outputs. Here's an example:
+
+```
+show endpoints file human aid 1234 write
+```
+
+In this command:
+
+- `show endpoints` tells the CLI to retrieve endpoint data.
+- `file human` specifies that the output format should be human-readable.
+- `aid 1234` filters the output to only include data for the endpoint with aid 1234.
+- `write` instructs the CLI to write the output to a file.
+
+The resulting output will be written to a file in the `./output` directory. The file will contain human-readable endpoint data for the endpoint with aid 1234.
+
+This combination of arguments provides a powerful and flexible way to retrieve and format data from the ThousandEyes API. You can mix and match arguments according to your needs.
 
 ## Environment Variable
 You can also set the TELESCOPE_BEARER environment variable to your Bearer Authentication Token. This allows the script to authenticate with the ThousandEyes API without needing to enter the token every time.
