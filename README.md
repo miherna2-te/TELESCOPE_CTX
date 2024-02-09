@@ -1,31 +1,36 @@
-# ThousandEyes Telescope CLI (CONTEXT)
+# TELESCOPE: A Python CLI for ThousandEyes API
 
 ![Telescope CLI](telescope.jpeg)
 
-This Python-based Command Line Interface (CLI) application, designed for interaction with the ThousandEyes API, emulates the syntax and context familiar to Cisco device users. It supports various "show" commands, much like a network operating system CLI.
+## Introduction
+TELESCOPE is a Python-based Command Line Interface (CLI) application, that provides a seamless interaction with the ThousandEyes API. It emulates a familiar syntax and context for Cisco device users, supporting various "show" commands akin to a network operating system CLI.
 
-Key Features:
+## Problem Statement
+The complex nature of APIs and the steep learning curve associated with them can pose challenges for users of the ThousandEyes platform.
 
-- **Data Retrieval and Formatting:** The CLI fetches and formats data from the ThousandEyes API, offering a variety of output formats such as YAML, CSV, JSON, and human-readable text. This flexibility allows users to conveniently analyze and process the data as per their requirements.
+## Solution
+TELESCOPE bridges this gap by offering a user-friendly translator that speaks the language of Cisco and ThousandEyes API, simplifying the interaction process.
 
-- **Single Input Bearer Token:** A standout feature of this CLI is its one-time requirement for the ThousandEyes API Bearer Token. After the initial input, the application retains the token for the entire session, facilitating uninterrupted interaction with the API without necessitating repeated token entries.
+## Key Features
+- **Usability:** Highly extendable and user-friendly.
+- **Single Input Bearer Token:** Requires the ThousandEyes API Bearer Token only once, retaining it for the entire session.
+- **Multiple Data Formats:** Supports JSON, YAML, CSV, and Human-readable formats.
+- **Data Output Redirect:** Option to redirect data output to a console or a file.
 
-- **Data Output Options:** The CLI provides two primary modes for data output. Users can opt to directly print the API response data to the terminal window or export the data to output files in their chosen format. This feature supports offline data analysis and record maintenance.
+## Versions
+TELESCOPE is available in two versions: CLI and Context.
+
+- **Command Line:** Integrates with Linux CLI, supporting redirection to commands like grep.
+- **Cisco Context:** Mirrors the Cisco device experience for intuitive interaction with the ThousandEyes API.
 
 ## Getting Started
+Ensure Python is installed on your machine. Install the required Python libraries listed in the `requirements.txt` file using pip:
 
-To run the script, you'll need to have Python installed on your machine. Install the required Python libraries listed in the `requirements.txt` file using pip:
-
-```
+```bash
 pip install -r requirements.txt
 ```
 
-## Author
-
-Miguel Hernandez
-
 ## Dependencies
-
 The script requires the following Python libraries:
 
 - os
@@ -41,36 +46,16 @@ The script requires the following Python libraries:
 - datetime
 - jinja2
 
-These libraries can be installed via pip using the `requirements.txt` file.
-
 ## Usage Instructions
+1. Open a command line terminal.
+2. Navigate to the directory containing the `telescope.py` script.
+3. Run the script using the command:
 
-Follow these steps to run the script:
-
-1. Open a command line terminal. 
-
-2. Navigate to the directory containing the `telescope.py` script. 
-
-For example, if the script is in a directory called `my_scripts` in your home directory, you would navigate there with the command `cd ~/my_scripts` on macOS or `cd \Users\YourUsername\my_scripts` on Windows. Please replace `YourUsername` with your actual username.
-
-3. Once inside the directory, you can run the script with the following command:
-
-```
+```bash
 python telescope.py
 ```
 
-4. After launching the script, you'll be greeted with the `telescope#` prompt. Here, you can enter the following commands:
-
-- `debug enabled`: Enables debug mode.
-- `debug disabled`: Disables debug mode.
-- `ls` or `show`: Lists available commands.
-- `exit`: Exits the program.
-
-Remember, you must navigate to the script's directory before running it, as the script uses relative paths to access other files and directories. If you attempt to run the script from a different directory, it will not work.
-
 ## Available Commands
-The following commands are currently available. Note that this list may expand over time:
-
 - show accounts
 - show agents
 - show alerts
@@ -87,51 +72,31 @@ The following commands are currently available. Note that this list may expand o
 - show tests
 
 ## Command Line Usage
-
-Once the Telescope CLI script is running and you're inside the `telescope#` context, you can use the following command structure:
-
-```
+```bash
 show [command] file [csv | yaml | human | json] aid [aid-number] write
 ```
+- `show [command]`: Base command. Replace `[command]` with the desired command.
+- `file [csv | yaml | human | json]`: Optional. Specifies output format.
+- `aid [aid-number]`: Optional. Filters output for a specific `aid`.
+- `write`: Optional. Writes output to a file in the `./output` directory.
 
-Here's a breakdown of the command structure:
-
-- `show [command]`: This is the base command. Replace `[command]` with any of the available commands such as `accounts`, `agents`, `alerts`, etc.
-- `file [csv | yaml | human | json]`: This is an optional command used to specify the output format. Replace `[csv | yaml | human | json]` with your preferred format.
-- `aid [aid-number]`: This is another optional command used to filter the output for a specific `aid`. Replace `[aid-number]` with the `aid` you want to filter by.
-- `write`: This is a standalone optional command. If included, the output will be written to a file in the `./output` directory.
-
-Here's an example of how to use these commands:
-
-```
+Example:
+```bash
 show endpoints file human aid 1234 write
 ```
 
-In this example, the `show endpoints` command retrieves endpoint data. The `file human` command specifies the output in a human-readable format. The `aid 1234` command filters the output for an endpoint with `aid` 1234. The `write` command writes this output to a file in the `./output` directory.
-
-Remember, `file`, `aid`, and `write` are all optional. If you don't specify an output format, the default is JSON. If you don't specify an `aid`, the command will return data for the default `aid`. If you don't include `write`, the output will be printed to the terminal
-
 ## Environment Variable
-You can also set the TELESCOPE_BEARER environment variable to your Bearer Authentication Token. This allows the script to authenticate with the ThousandEyes API without needing to enter the token every time.
+Set the TELESCOPE_BEARER environment variable to your Bearer Authentication Token to authenticate with the ThousandEyes API without needing to enter the token every time.
 
-### On macOS:
-
-If you're using the zsh shell (the default on macOS Catalina and later), add the following line to your ~/.zshrc file:
-
+On macOS:
 ```bash
 export TELESCOPE_BEARER=your_token_here
 ```
 
-Then, apply the changes with the command `source ~/.zshrc`.
-
-### On Windows:
-
-Use the setx command in Command Prompt:
-
+On Windows:
 ```bash
 setx TELESCOPE_BEARER "your_token_here"
 ```
-
-Please replace `your_token_here` with your actual Bearer Authentication Token.
+Replace `your_token_here` with your actual Bearer Authentication Token. 
 
 **Note:** Remember to restart your terminal or command prompt after setting the environment variable.
