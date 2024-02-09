@@ -80,7 +80,27 @@ show [command] file [csv | yaml | human | json] aid [aid-number] write
 - `aid [aid-number]`: Optional. Filters output for a specific `aid`.
 - `write`: Optional. Writes output to a file in the `./output` directory.
 
-Example:
+Examples:
+
+To print out all the accounts run:
+
+```bash
+show accounts
+```
+
+To change the format to csv use:
+
+```bash
+show accounts file csv
+```
+
+The information can be filtered by using a specific AID as follows:
+
+```bash
+show endpoints file human aid 1234
+```
+To save the output as file, include `write` keyword:
+
 ```bash
 show endpoints file human aid 1234 write
 ```
